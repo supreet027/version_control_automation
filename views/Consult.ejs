@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c5392c1020.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consult</title>
+</head>
+<body>
+    <div class="container">
+        <div class="img">
+            <img src="images/undraw_mobile_login_re_9ntv.svg" alt="">
+        </div>
+
+        <div class="login-content">
+            <div class="box">
+                <h2 class="title">
+                    <%= title %>
+                </h2>
+                <form id="loginForm" action="/Consult/token_id" method="POST" >
+                    <p>
+                        Enter your 10-digit mobile phone number to generate a token for consultation with our expert team.<br>
+                    </p>
+                    <div class="input-div">
+                        <div class="i">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Mobile number</h5>
+                            <input class="input" type="tel" name="mobile_no" id="mobile_no" pattern="[0-9]{10}" required value="<%= mobile_no %>"/>
+                            <div class="error-message" id="error-msg"></div>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn" value="Generate Token">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="javascripts/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4"></script>
+<script>
+  const qrCodeDataUrl = "<%= qrCodeDataUrl %>"; // Assuming you have passed the QR code data URL from the server
+
+  // Create a QR code image using the data URL and append it to the qrcode-container element
+  const container = document.getElementById("qrcode-container");
+  const qrCodeImage = document.createElement("img");
+  qrCodeImage.src = qrCodeDataUrl;
+  container.appendChild(qrCodeImage);
+</script>
+
+</body>
+</html>
