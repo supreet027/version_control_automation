@@ -39,16 +39,5 @@
         </div>
     </div>
     <script type="text/javascript" src="javascripts/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4"></script>
-<script>
-  const qrCodeDataUrl = "<%= qrCodeDataUrl %>"; // Assuming you have passed the QR code data URL from the server
-
-  // Create a QR code image using the data URL and append it to the qrcode-container element
-  const container = document.getElementById("qrcode-container");
-  const qrCodeImage = document.createElement("img");
-  qrCodeImage.src = qrCodeDataUrl;
-  container.appendChild(qrCodeImage);
-</script>
-
 </body>
 </html>
