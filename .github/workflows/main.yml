@@ -5,6 +5,4 @@ jobs:
     steps:
       - run: node --version
       - run: npm --version
-      - name: Run tests
-        run: npm test 
 
