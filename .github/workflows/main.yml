@@ -1,22 +1,24 @@
 name: Run tests 
+
 on: 
   push:
     branches: 
       - 'main'
-    pull requests:
-      branches:
+  pull_request:
+    branches:
       - 'main'
+
 jobs:
   tests:
     runs-on: windows-latest
     steps:
-      - name: Checkout version_control_automation
-        uses: action/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-         node-version: 18.6.0
+          node-version: 18.6.0
       - name: Install Dependencies
         run: npm ci
       - name: Run tests
-        run: npm test   
+        run: npm test
