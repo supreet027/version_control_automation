@@ -1,7 +1,0 @@
-on: push 
-jobs: 
-   first-jobs
-    runs-on: windows-latest
-    steps:
-      - run: node --version
-      - run: npm --version
