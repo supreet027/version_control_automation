@@ -183,6 +183,46 @@ a:hover{
 }
 
 
+.department-selector {
+    margin-top: 20px; /* Adjust the margin-top as needed */
+}
+
+.department-selector label {
+    display: block;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.department-selector select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Add styling for focus state if needed */
+.department-selector select:focus {
+    border-color: #38d39f;
+}
+
+/* Add styling for error state if needed */
+.department-selector.error select {
+    border-color: #ff0000; /* Adjust the color as needed */
+}
+
+/* Adjust other styles as needed */
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1050px){
 	.container{
 		grid-gap: 5rem;

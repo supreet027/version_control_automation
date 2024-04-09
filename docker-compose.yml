@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql2
+    environment:
+      MYSQL_DATABASE: qr_web
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Sup@petu207
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Sup@petu207
+      MYSQL_DATABASE: qr_web

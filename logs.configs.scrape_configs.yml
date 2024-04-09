@@ -1,0 +1,16 @@
+    - job_name: integrations/mysql 
+      static_configs:
+        - labels:
+            instance: 'dodo' # must match instance used in mysqld_exporter
+            job: integrations/mysql # must match job used in mysqld_exporter
+            __path__: /var/log/mysql/*.log
+      pipeline_stages:
+        - regex:
+              expression: '(?P<timestamp>.+) (?P<thread>[\d]+) \[(?P<label>.+?)\]( \[(?P<err_code>.+?)\] \[(?P<subsystem>.+?)\])? (?P<msg>.+)'
+        - labels:
+            level: label
+            err_code:
+            subsystem:
+        - drop:
+            expression: "^ *$"
+            drop_counter_reason: "drop empty lines"

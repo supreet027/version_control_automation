@@ -1,3 +1,4 @@
+create database qr_web;
 use qr_web;
 
 DELETE FROM table1;
@@ -22,6 +23,6 @@ ALTER TABLE qr_web.Table1 ADD COLUMN action INT DEFAULT 0;
  
 
 
-
+SELECT * FROM qr_web.Table1;
 
 SELECT * FROM qr_web.Table2;
